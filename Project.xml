@@ -129,6 +129,10 @@
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop debug"/> -->
 	
 	<haxelib name="flixel-animate" />
+	
+	<define name="DESKTOP_VIDEOS" unless="hl"/>
+	<haxelib name="hxvlc" if="DESKTOP_VIDEOS"/>
+
 	<!-- <haxelib name="spinehaxe" /> -->
 	<!-- https://github.com/ninjamuffin99/Flixel-Animate-Atlas-Player -->
 
