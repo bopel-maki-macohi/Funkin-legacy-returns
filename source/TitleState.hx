@@ -109,11 +109,11 @@ class TitleState extends MusicBeatState
 		}
 
 		#if FREEPLAY
-		FlxG.switchState(new FreeplayState());
+		FlxG.switchState(() -> new FreeplayState());
 		#elseif ANIMATE
-		FlxG.switchState(new CutsceneAnimTestState());
+		FlxG.switchState(() -> new CutsceneAnimTestState());
 		#elseif CHARTING
-		FlxG.switchState(new ChartingState());
+		FlxG.switchState(() -> new ChartingState());
 		/* 
 			#elseif web
 
@@ -314,7 +314,7 @@ class TitleState extends MusicBeatState
 			initialized = true;
 
 		if (FlxG.sound.music != null)
-			FlxG.sound.music.onComplete = function() FlxG.switchState(new VideoState());
+			FlxG.sound.music.onComplete = function() FlxG.switchState(() -> new VideoState());
 
 		startedIntro = true;
 		// credGroup.add(credTextShit);
@@ -341,7 +341,7 @@ class TitleState extends MusicBeatState
 	{
 		#if debug
 		if (FlxG.keys.justPressed.EIGHT)
-			FlxG.switchState(new CutsceneAnimTestState());
+			FlxG.switchState(() -> new CutsceneAnimTestState());
 		#end
 
 		/* 
@@ -399,7 +399,7 @@ class TitleState extends MusicBeatState
 			transitioning = true;
 			// FlxG.sound.music.stop();
 
-			FlxG.switchState(new MainMenuState());
+			FlxG.switchState(() -> new MainMenuState());
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}
 
